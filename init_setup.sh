@@ -1,6 +1,7 @@
 echo [$(date)]: "START"
-echo [$(date)]: "creating environment"
-conda create --prefix ./env python=3.7 -y
+export _VERSION_=3.7
+echo [$(date)]: "creating environment with python ${_VERSION_}"
+conda create --prefix ./env python=${_VERSION_} -y
 echo [$(date)]: "activate environment"
 source activate ./env
 echo [$(date)]: "install requirements"
@@ -11,3 +12,4 @@ echo [$(date)]: "END"
 
 # to remove everything -
 # rm -rf env/ .gitignore conda.yaml README.md .git/
+
